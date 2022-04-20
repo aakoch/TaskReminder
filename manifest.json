@@ -1,0 +1,29 @@
+{
+	"include": [
+		"$(MODDABLE)/examples/manifest_base.json",
+		"$(MODDABLE)/examples/manifest_net.json",
+		"$(MODDABLE)/examples/manifest_piu.json"
+	],
+	"modules": {
+		"*": [
+			"./main",
+			"$(MODULES)/network/http/*"
+		]
+	},
+	"preload": [
+		"http"
+	],
+	"resources":{
+		"*-mask": [
+			"$(MODDABLE)/examples/assets/fonts/OpenSans-Regular-20",
+			"./wifi-strip"
+		]
+	},
+	"platforms": {
+		"esp32": {
+			"config": {
+				"rotation": 90
+			}
+		}
+	}
+}
